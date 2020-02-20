@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:controls="clr-namespace:wrap.Controls"
+              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="wrap.MainPage">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
+         <controls:RepeatableWrapLayout HorizontalOptions="FillAndExpand" ItemsSource="{Binding Rows}" UniformColumns="2" Spacing="5">
+            <controls:RepeatableWrapLayout.ItemTemplate>
+                <DataTemplate>
+                   <controls:BookableTypeTag HorizontalOptions="FillAndExpand" Text="{Binding ID}" IsSelected="{Binding IsSelected}"  />
+                </DataTemplate>
+            </controls:RepeatableWrapLayout.ItemTemplate>
+          </controls:RepeatableWrapLayout>
+    </StackLayout>
+</ContentPage>
